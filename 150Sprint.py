@@ -51,7 +51,7 @@ for z in range(3):
     for x in range(150,153):
         voxel = Voxel((x,0,z),color.orange)
 
-player=FirstPersonController()
+player = FirstPersonController()
 
 if player.x == 0:
     print_on_screen(text='w forward, a left, d right, s backwards, e jump',
