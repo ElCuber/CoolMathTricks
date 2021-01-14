@@ -10,8 +10,8 @@ class Voxel(Button):
                          origin_y = 0.5,
                          texture = 'white_cube',
                          color = color,)
-    def destroy(self):
-        u = randint(1, 3)
+    def destroy(self,user_input):
+        u = randint(1, user_input)
         if u != 1 and x > 1:
             destroy(voxel)
         else:
@@ -36,6 +36,9 @@ def update():
                             duration = 5)
         else:
             pass
+  
+if __name__ == "__main__":
+    user_input = int(input("Level?"))
 
 app = Ursina()
 
@@ -46,7 +49,8 @@ window.color = color.blue
 for z in range(3):
     for x in range(150):
         voxel = Voxel((x,0,z),color.white)
-        voxel.destroy()
+        voxel.destroy(user_input)
+        
 for z in range(3):
     for x in range(150,153):
         voxel = Voxel((x,0,z),color.orange)
